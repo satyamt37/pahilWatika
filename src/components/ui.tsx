@@ -78,7 +78,15 @@ export function LinkButton({ href, variant = "primary", size = "md", icon, class
 
 export function Card({ className, children, ...rest }: { className?: string; children: ReactNode } & React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={clsx("rounded-2xl border border-forest/5 bg-white shadow-card", className)} {...rest}>
+    <div
+      className={clsx(
+        "rounded-2xl border border-forest/5 shadow-card",
+        // Default white only when the caller doesn't choose a background (Tailwind can't resolve two bg-* classes).
+        !/(^|\s)bg-/.test(className ?? "") && "bg-white",
+        className,
+      )}
+      {...rest}
+    >
       {children}
     </div>
   );

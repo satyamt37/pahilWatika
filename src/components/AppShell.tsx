@@ -77,8 +77,8 @@ export function AppShell({ children }: { children: ReactNode }) {
           </nav>
           <div className="flex items-center gap-1">
             {staff && (
-              <Link href="/admin/" className="hidden h-10 items-center gap-1.5 rounded-full bg-gold px-3 text-sm font-semibold text-forest-900 sm:inline-flex">
-                <LayoutDashboard className="h-4 w-4" /> Admin
+              <Link href="/admin/" className="inline-flex h-10 items-center gap-1.5 rounded-full bg-gold px-3 text-sm font-semibold text-forest-900" aria-label="Admin dashboard">
+                <LayoutDashboard className="h-4 w-4" /> <span className="hidden min-[380px]:inline">Admin</span>
               </Link>
             )}
             {auth.user ? (

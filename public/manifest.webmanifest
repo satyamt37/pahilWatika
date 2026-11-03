@@ -1,0 +1,11 @@
+{
+  "name": "पाहिल वाटिका योगा ग्रुप, खजुराहो",
+  "short_name": "पाहिल वाटिका",
+  "description": "Pahil Vatika Yoga Parivaar — एक परिवार, एक पहचान।",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F7F4EA",
+  "theme_color": "#183D32",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  /* Devanagari needs a little more line height to keep matras from clipping */
+  .font-hindi,
+  [lang="hi"] h1,
+  [lang="hi"] h2 {
+    line-height: 1.45;
+  }
+  :focus-visible {
+    outline: 2px solid #e6b85c;
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Sunrise-over-garden backdrop used when no hero photo is uploaded */
+  .bg-sunrise {
+    background:
+      radial-gradient(120% 70% at 50% 105%, rgba(230, 184, 92, 0.95) 0%, rgba(230, 184, 92, 0.35) 35%, transparent 60%),
+      radial-gradient(60% 40% at 50% 100%, #fff3d0 0%, transparent 70%),
+      linear-gradient(180deg, #0f2921 0%, #183d32 45%, #33684a 80%, #4c956c 100%);
+  }
+  .range-gold {
+    accent-color: #e6b85c;
+  }
+}
+
+/* Masonry gallery using CSS columns (works on older mobile browsers) */
+.masonry {
+  column-gap: 0.5rem;
+  columns: 2;
+}
+@media (min-width: 640px) {
+  .masonry {
+    columns: 3;
+    column-gap: 0.75rem;
+  }
+}
+@media (min-width: 1024px) {
+  .masonry {
+    columns: 4;
+  }
+}
+.masonry > * {
+  break-inside: avoid;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 640px) {
+  .masonry > * {
+    margin-bottom: 0.75rem;
+  }
+}
